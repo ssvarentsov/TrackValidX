@@ -1,0 +1,15 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+Dim hFile As File
+Dim sLine As String
+hFile = Open "LICENSE" For Input
+While Not Eof(hFile)
+  Line Input #hFile, sLine
+  txaLicense.Text = txaLicense.Text & "\r" & sLine
+Wend
+txaLicense.Line = 0
+
+End

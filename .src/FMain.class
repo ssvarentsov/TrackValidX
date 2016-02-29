@@ -1,0 +1,785 @@
+' Gambas class file
+
+    Public sAA As String ' departure type
+    Public sN1 As String ' N1-N9 - mail ID numbers
+    Public sN2 As String 
+    Public sN3 As String 
+    Public sN4 As String 
+    Public sN5 As String 
+    Public sN6 As String 
+    Public sN7 As String 
+    Public sN8 As String 
+    Public sN9 As String 
+    Public sBB As String ' country code
+    Public sA As String ' the letter to determine the type of departure
+    Public sRusN1 As String  ' the first character of an internal mail ID in Russia
+    Public sRusN2 As String
+    Public sRusN3 As String
+    Public sRusN4 As String
+    Public sRusN5 As String
+    Public sRusN6 As String
+    Public sRusN7 As String
+    Public sRusN8 As String
+    Public sRusN9 As String
+    Public sRusN10 As String
+    Public sRusN11 As String
+    Public sRusN12 As String
+    Public sRusN13 As String
+    Public sRusN14 As String
+    Public iNSumRus As Short
+    Public iNModRus As Short
+    Public iNCtrlRus As Byte
+    Public iNCodeRus As Byte ' check sum mail ID's from Russia
+    Public iNSum As Short ' (N1*8)+(N2*6)+(N3*4)+(N4*2)+(N5*3)+(N6*5)+(N7*9)+(N8*7)
+    Public iNMod As Integer 'Remainder of the division ( NSum / 11)
+    Public iNCtrl As Byte ' the result of subtracting the remainder of the division (11)
+    Public iNCode As Byte ' check sum
+    Public sRusNReg As String
+    Public sRusNDate As String
+
+
+Public Sub mnuActionsExit_Click()
+
+  Me.Close
+
+End
+
+Public Sub mnuActionsErase_Click()
+
+  btnErase_Click()
+
+End
+
+Public Sub btnErase_Click()
+
+  lblValid.Text = ""
+  lblMainData.Text = ""
+  lblRegion.Text = ""
+  txtTN.Text = ""
+
+End
+
+Public Sub btnCheck_Click()
+
+  lblValid.Text = ""
+  lblMainData.Text = ""
+  lblRegion.Text = ""
+  ' ЕСЛИ ВЫБРАНО МЕЖДУНАРОДНОЕ ОТПРАВЛЕНИЕ
+  If cmbType.Index = 0 Then
+    sAA = String.Mid(txtTN.Text, 1, 2)
+    sN1 = String.Mid(txtTN.Text, 3, 1)
+    sN2 = String.Mid(txtTN.Text, 4, 1)
+    sN3 = String.Mid(txtTN.Text, 5, 1)
+    sN4 = String.Mid(txtTN.Text, 6, 1)
+    sN5 = String.Mid(txtTN.Text, 7, 1)
+    sN6 = String.Mid(txtTN.Text, 8, 1)
+    sN7 = String.Mid(txtTN.Text, 9, 1)
+    sN8 = String.Mid(txtTN.Text, 10, 1)
+    sN9 = String.Mid(txtTN.Text, 11, 1)
+    sBB = String.Mid(txtTN.Text, 12, 2)
+    sA = String.Mid(txtTN.Text, 1, 1)
+    
+
+Try iNSum = (Val(sN1) * 8) + (Val(sN2) * 6) + (Val(sN3) * 4) + (Val(sN4) * 2) + (Val(sN5) * 3) + (Val(sN6) * 5) + (Val(sN7) * 9) + (Val(sN8) * 7)
+If Error = True Then 
+lblStatus.Text = ("Ошибка: ") & Error.Text
+Return
+End If
+
+iNMod = iNSum Mod 11
+
+iNCtrl = 11 - iNMod
+
+
+    If iNCtrl >= 1 Or iNCtrl <= 9 Then
+      iNCode = iNCtrl
+    End If
+    If iNCtrl = 10 Then iNCode = 0
+    If iNCtrl = 11 Then iNCode = 5
+    If Val(sN9) = iNCode Then
+      lblValid.Text = ("Правильный")
+      lblValid.Foreground = Color.DarkGreen
+    Else
+      lblValid.Text = ("Не существует")
+      lblValid.Foreground = Color.DarkRed
+    End If
+    
+    If sA = "A" Then lblMainData.Text = ("Заказное письмо, не регистрируется, не застраховано")
+    If sA = "B" Then lblMainData.Text = ("Для внутреннего использования, двухстороннего и многостороннего")
+    If sA = "C" Then lblMainData.Text = ("Простая посылка, вес более 2 кг, отслеживается")
+    If sA = "D" Then lblMainData.Text = ("Для внутреннего использования, двухстороннего и многостороннего")
+    If sA = "E" Then lblMainData.Text = ("Экспресс-отправление EMS, отслеживается")
+    If sA = "L" Then lblMainData.Text = ("Письмо или мелкий пакет, экспресс-доставка, не отслеживается")
+    If sA = "N" Then lblMainData.Text = ("Для внутреннего использования, двухстороннего и многостороннего")
+    If sA = "P" Then lblMainData.Text = ("Для внутреннего использования, двухстороннего и многостороннего")
+    If sA = "R" Then lblMainData.Text = ("Мелкий пакет или письмо, отслеживается, не застраховано")
+    If sA = "V" Then lblMainData.Text = ("Отправление с объявленной ценностью или застрахованное")
+    If sA = "Z" Then lblMainData.Text = ("Для внутреннего использования, двухстороннего и многостороннего")
+    
+    If sBB = "CN" Then lblRegion.Text = ("Китай")
+    If sBB = "AU" Then lblRegion.Text = ("Австралия")
+    If sBB = "AT" Then lblRegion.Text = ("Австрия")
+    If sBB = "AZ" Then lblRegion.Text = ("Азербайджан")
+    If sBB = "AX" Then lblRegion.Text = ("Аландские острова")
+    If sBB = "AL" Then lblRegion.Text = ("Албания")
+    If sBB = "DZ" Then lblRegion.Text = ("Алжир")
+    If sBB = "VI" Then lblRegion.Text = ("Американские Виргинские острова")
+    If sBB = "AS" Then lblRegion.Text = ("Американское Самоа")
+    If sBB = "AI" Then lblRegion.Text = ("Ангилья")
+    If sBB = "AO" Then lblRegion.Text = ("Ангола")
+    If sBB = "AD" Then lblRegion.Text = ("Андорра")
+    If sBB = "AQ" Then lblRegion.Text = ("Антарктида")
+    If sBB = "AG" Then lblRegion.Text = ("Антигуа и Барбуда")
+    If sBB = "AR" Then lblRegion.Text = ("Аргентина")
+    If sBB = "AM" Then lblRegion.Text = ("Армения")
+    If sBB = "AW" Then lblRegion.Text = ("Аруба")
+    If sBB = "AF" Then lblRegion.Text = ("Афганистан")
+    If sBB = "BS" Then lblRegion.Text = ("Багамы")
+    If sBB = "BD" Then lblRegion.Text = ("Бангладеш")
+    If sBB = "sBB" Then lblRegion.Text = ("Барбадос")
+    If sBB = "BH" Then lblRegion.Text = ("Бахрейн")
+    If sBB = "BZ" Then lblRegion.Text = ("Белиз")
+    If sBB = "BY" Then lblRegion.Text = ("Белоруссия")
+    If sBB = "BE" Then lblRegion.Text = ("Бельгия")
+    If sBB = "BJ" Then lblRegion.Text = ("Бенин")
+    If sBB = "BM" Then lblRegion.Text = ("Бермуды")
+    If sBB = "BG" Then lblRegion.Text = ("Болгария")
+    If sBB = "BO" Then lblRegion.Text = ("Боливия")
+    If sBB = "BQ" Then lblRegion.Text = ("Бонэйр, Синт-Эстатиус и Саба")
+    If sBB = "BA" Then lblRegion.Text = ("Босния и Герцеговина")
+    If sBB = "BW" Then lblRegion.Text = ("Ботсвана")
+    If sBB = "BR" Then lblRegion.Text = ("Бразилия")
+    If sBB = "IO" Then lblRegion.Text = ("Британская территория в Индийском океане")
+    If sBB = "VG" Then lblRegion.Text = ("Британские Виргинские острова")
+    If sBB = "BN" Then lblRegion.Text = ("Бруней")
+    If sBB = "BF" Then lblRegion.Text = ("Буркина-Фасо")
+    If sBB = "BI" Then lblRegion.Text = ("Бурунди")
+    If sBB = "BT" Then lblRegion.Text = ("Бутан")
+    If sBB = "VU" Then lblRegion.Text = ("Вануату")
+    If sBB = "VA" Then lblRegion.Text = ("Ватикан")
+    If sBB = "GB" Then lblRegion.Text = ("Великобритания")
+    If sBB = "HU" Then lblRegion.Text = ("Венгрия")
+    If sBB = "VE" Then lblRegion.Text = ("Венесуэла")
+    If sBB = "UM" Then lblRegion.Text = ("Внешние малые острова (США)")
+    If sBB = "TL" Then lblRegion.Text = ("Восточный Тимор")
+    If sBB = "VN" Then lblRegion.Text = ("Вьетнам")
+    If sBB = "GA" Then lblRegion.Text = ("Габон")
+    If sBB = "HT" Then lblRegion.Text = ("Гаити")
+    If sBB = "GY" Then lblRegion.Text = ("Гайана")
+    If sBB = "GM" Then lblRegion.Text = ("Гамбия")
+    If sBB = "GH" Then lblRegion.Text = ("Гана")
+    If sBB = "GP" Then lblRegion.Text = ("Гваделупа")
+    If sBB = "GT" Then lblRegion.Text = ("Гватемала")
+    If sBB = "GF" Then lblRegion.Text = ("Гвиана")
+    If sBB = "GN" Then lblRegion.Text = ("Гвинея")
+    If sBB = "GW" Then lblRegion.Text = ("Гвинея-Бисау")
+    If sBB = "DE" Then lblRegion.Text = ("Германия")
+    If sBB = "GG" Then lblRegion.Text = ("Гернси")
+    If sBB = "GI" Then lblRegion.Text = ("Гибралтар")
+    If sBB = "HN" Then lblRegion.Text = ("Гондурас")
+    If sBB = "HK" Then lblRegion.Text = ("Гонконг")
+    If sBB = "GD" Then lblRegion.Text = ("Гренада")
+    If sBB = "GL" Then lblRegion.Text = ("Гренландия")
+    If sBB = "GR" Then lblRegion.Text = ("Греция")
+    If sBB = "GE" Then lblRegion.Text = ("Грузия")
+    If sBB = "GU" Then lblRegion.Text = ("Гуам")
+    If sBB = "DK" Then lblRegion.Text = ("Дания")
+    If sBB = "JE" Then lblRegion.Text = ("Джерси (остров)")
+    If sBB = "DJ" Then lblRegion.Text = ("Джибути")
+    If sBB = "DM" Then lblRegion.Text = ("Доминика")
+    If sBB = "DO" Then lblRegion.Text = ("Доминиканская республика")
+    If sBB = "CD" Then lblRegion.Text = ("Демократическая Республика Конго")
+    If sBB = "EU" Then lblRegion.Text = ("Европейский союз")
+    If sBB = "EG" Then lblRegion.Text = ("Египет")
+    If sBB = "ZM" Then lblRegion.Text = ("Замбия")
+    If sBB = "EH" Then lblRegion.Text = ("Западная Сахара")
+    If sBB = "ZW" Then lblRegion.Text = ("Зимбабве")
+    If sBB = "IL" Then lblRegion.Text = ("Израиль")
+    If sBB = "IN" Then lblRegion.Text = ("Индия")
+    If sBB = "ID" Then lblRegion.Text = ("Индонезия")
+    If sBB = "JO" Then lblRegion.Text = ("Иордания")
+    If sBB = "IQ" Then lblRegion.Text = ("Ирак")
+    If sBB = "IR" Then lblRegion.Text = ("Иран")
+    If sBB = "IE" Then lblRegion.Text = ("Ирландия")
+    If sBB = "IS" Then lblRegion.Text = ("Исландия")
+    If sBB = "ES" Then lblRegion.Text = ("Испания")
+    If sBB = "IT" Then lblRegion.Text = ("Италия")
+    If sBB = "YE" Then lblRegion.Text = ("Йемен")
+    If sBB = "CV" Then lblRegion.Text = ("Кабо-Верде")
+    If sBB = "KZ" Then lblRegion.Text = ("Казахстан")
+    If sBB = "KY" Then lblRegion.Text = ("Каймановы острова")
+    If sBB = "KH" Then lblRegion.Text = ("Камбоджа")
+    If sBB = "CM" Then lblRegion.Text = ("Камерун")
+    If sBB = "CA" Then lblRegion.Text = ("Канада")
+    If sBB = "QA" Then lblRegion.Text = ("Катар")
+    If sBB = "KE" Then lblRegion.Text = ("Кения")
+    If sBB = "CY" Then lblRegion.Text = ("Кипр")
+    If sBB = "KG" Then lblRegion.Text = ("Киргизия")
+    If sBB = "KI" Then lblRegion.Text = ("Кирибати")
+    If sBB = "TW" Then lblRegion.Text = ("Китайская Республика")
+    If sBB = "KP" Then lblRegion.Text = ("КНДР")
+    If sBB = "CC" Then lblRegion.Text = ("Кокосовые острова")
+    If sBB = "CO" Then lblRegion.Text = ("Колумбия")
+    If sBB = "KM" Then lblRegion.Text = ("Коморы")
+    If sBB = "CR" Then lblRegion.Text = ("Коста-Рика")
+    If sBB = "CI" Then lblRegion.Text = ("Кот-д'Ивуар")
+    If sBB = "CU" Then lblRegion.Text = ("Куба")
+    If sBB = "KW" Then lblRegion.Text = ("Кувейт")
+    If sBB = "CW" Then lblRegion.Text = ("Кюрасао")
+    If sBB = "LA" Then lblRegion.Text = ("Лаос")
+    If sBB = "LV" Then lblRegion.Text = ("Латвия")
+    If sBB = "LS" Then lblRegion.Text = ("Лесото")
+    If sBB = "LR" Then lblRegion.Text = ("Либерия")
+    If sBB = "LB" Then lblRegion.Text = ("Ливан")
+    If sBB = "LY" Then lblRegion.Text = ("Ливия")
+    If sBB = "LT" Then lblRegion.Text = ("Литва")
+    If sBB = "LI" Then lblRegion.Text = ("Лихтенштейн")
+    If sBB = "LU" Then lblRegion.Text = ("Люксембург")
+    If sBB = "MU" Then lblRegion.Text = ("Маврикий")
+    If sBB = "MR" Then lblRegion.Text = ("Мавритания")
+    If sBB = "MG" Then lblRegion.Text = ("Мадагаскар")
+    If sBB = "YT" Then lblRegion.Text = ("Майотта")
+    If sBB = "MO" Then lblRegion.Text = ("Макао")
+    If sBB = "MK" Then lblRegion.Text = ("Македония")
+    If sBB = "MW" Then lblRegion.Text = ("Малави")
+    If sBB = "MY" Then lblRegion.Text = ("Малайзия")
+    If sBB = "ML" Then lblRegion.Text = ("Мали")
+    If sBB = "MV" Then lblRegion.Text = ("Мальдивы")
+    If sBB = "MT" Then lblRegion.Text = ("Мальта")
+    If sBB = "MA" Then lblRegion.Text = ("Марокко")
+    If sBB = "MQ" Then lblRegion.Text = ("Мартиника")
+    If sBB = "MH" Then lblRegion.Text = ("Маршалловы Острова")
+    If sBB = "MX" Then lblRegion.Text = ("Мексика")
+    If sBB = "FM" Then lblRegion.Text = ("Микронезия")
+    If sBB = "MZ" Then lblRegion.Text = ("Мозамбик")
+    If sBB = "MD" Then lblRegion.Text = ("Молдавия")
+    If sBB = "MC" Then lblRegion.Text = ("Монако")
+    If sBB = "MN" Then lblRegion.Text = ("Монголия")
+    If sBB = "MS" Then lblRegion.Text = ("Монтсеррат")
+    If sBB = "MM" Then lblRegion.Text = ("Мьянма")
+    If sBB = "NA" Then lblRegion.Text = ("Намибия")
+    If sBB = "NR" Then lblRegion.Text = ("Науру")
+    If sBB = "NP" Then lblRegion.Text = ("Непар")
+    If sBB = "NE" Then lblRegion.Text = ("Нигер")
+    If sBB = "NG" Then lblRegion.Text = ("Нигерия")
+    If sBB = "NL" Then lblRegion.Text = ("Нидерланды")
+    If sBB = "NI" Then lblRegion.Text = ("Никарагуа")
+    If sBB = "NU" Then lblRegion.Text = ("Ниуэ")
+    If sBB = "NZ" Then lblRegion.Text = ("Новая Зеландия")
+    If sBB = "NC" Then lblRegion.Text = ("Новая Каледония")
+    If sBB = "NO" Then lblRegion.Text = ("Норвегия")
+    If sBB = "AE" Then lblRegion.Text = ("ОАЭ")
+    If sBB = "OM" Then lblRegion.Text = ("Оман")
+    If sBB = "BV" Then lblRegion.Text = ("Остров Буве")
+    If sBB = "IM" Then lblRegion.Text = ("Остров Мэн")
+    If sBB = "CK" Then lblRegion.Text = ("Остров Кука")
+    If sBB = "NF" Then lblRegion.Text = ("Остров Норфолк")
+    If sBB = "CX" Then lblRegion.Text = ("Остров Рождества")
+    If sBB = "PN" Then lblRegion.Text = ("Острова Питкэрн")
+    If sBB = "SH" Then lblRegion.Text = ("Острова Святой Елены, Вознесения и Тристан-да-Кунья")
+    If sBB = "PK" Then lblRegion.Text = ("Пакистан")
+    If sBB = "PW" Then lblRegion.Text = ("Палау")
+    If sBB = "PS" Then lblRegion.Text = ("Государство Палестина")
+    If sBB = "PA" Then lblRegion.Text = ("Панама")
+    If sBB = "PG" Then lblRegion.Text = ("Папуа - Новая Гвинея")
+    If sBB = "PY" Then lblRegion.Text = ("Парагвай")
+    If sBB = "PE" Then lblRegion.Text = ("Перу")
+    If sBB = "PL" Then lblRegion.Text = ("Польша")
+    If sBB = "PT" Then lblRegion.Text = ("Португалия")
+    If sBB = "PR" Then lblRegion.Text = ("Пуэрто-Рико")
+    If sBB = "CG" Then lblRegion.Text = ("Республика Конго")
+    If sBB = "KR" Then lblRegion.Text = ("Республика Корея")
+    If sBB = "RE" Then lblRegion.Text = ("Реюньон")
+    If sBB = "RU" Then lblRegion.Text = ("Российская Федерация")
+    If sBB = "RW" Then lblRegion.Text = ("Руанда")
+    If sBB = "RO" Then lblRegion.Text = ("Румыния")
+    If sBB = "SV" Then lblRegion.Text = ("Сальвадор")
+    If sBB = "WS" Then lblRegion.Text = ("Самоа")
+    If sBB = "SM" Then lblRegion.Text = ("Сан-Марино")
+    If sBB = "ST" Then lblRegion.Text = ("Сан-Томе и Принсипи")
+    If sBB = "SA" Then lblRegion.Text = ("Саудовская Аравия")
+    If sBB = "SZ" Then lblRegion.Text = ("Свазиленд")
+    If sBB = "MP" Then lblRegion.Text = ("Северные Марианские острова")
+    If sBB = "SC" Then lblRegion.Text = ("Сейшельские Острова")
+    If sBB = "BL" Then lblRegion.Text = ("Сен-Бартелеми")
+    If sBB = "MF" Then lblRegion.Text = ("Сен-Мартен")
+    If sBB = "PM" Then lblRegion.Text = ("Сен-Пьер и Микелон")
+    If sBB = "SN" Then lblRegion.Text = ("Сенегал")
+    If sBB = "VC" Then lblRegion.Text = ("Сент-Винсент и Гренадины")
+    If sBB = "KN" Then lblRegion.Text = ("Сент-Китс и Невис")
+    If sBB = "LC" Then lblRegion.Text = ("Сент-Люсия")
+    If sBB = "RS" Then lblRegion.Text = ("Сербия")
+    If sBB = "SG" Then lblRegion.Text = ("Сингапур")
+    If sBB = "SX" Then lblRegion.Text = ("Синт-Мартен")
+    If sBB = "SY" Then lblRegion.Text = ("Сирия")
+    If sBB = "SK" Then lblRegion.Text = ("Словакия")
+    If sBB = "SI" Then lblRegion.Text = ("Словения")
+    If sBB = "SB" Then lblRegion.Text = ("Соломоновы Острова")
+    If sBB = "SO" Then lblRegion.Text = ("Сомали")
+    If sBB = "SD" Then lblRegion.Text = ("Судан")
+    If sBB = "SU" Then lblRegion.Text = ("не существует")
+    If sBB = "SR" Then lblRegion.Text = ("Суринам")
+    If sBB = "US" Then lblRegion.Text = ("США")
+    If sBB = "SL" Then lblRegion.Text = ("Сьерра-Леоне")
+    If sBB = "TJ" Then lblRegion.Text = ("Таджикистан")
+    If sBB = "TH" Then lblRegion.Text = ("Тайланд")
+    If sBB = "TZ" Then lblRegion.Text = ("Танзания")
+    If sBB = "TC" Then lblRegion.Text = ("Тёркс и Кайкос")
+    If sBB = "TG" Then lblRegion.Text = ("Того")
+    If sBB = "TK" Then lblRegion.Text = ("Токелау")
+    If sBB = "TO" Then lblRegion.Text = ("Тонга")
+    If sBB = "TT" Then lblRegion.Text = ("Тринидад и Тобаго")
+    If sBB = "TV" Then lblRegion.Text = ("Тувалу")
+    If sBB = "TN" Then lblRegion.Text = ("Тунис")
+    If sBB = "TM" Then lblRegion.Text = ("Туркмения")
+    If sBB = "TR" Then lblRegion.Text = ("Турция")
+    If sBB = "UG" Then lblRegion.Text = ("Уганда")
+    If sBB = "UZ" Then lblRegion.Text = ("Узбекистан")
+    If sBB = "UA" Then lblRegion.Text = ("Украина")
+    If sBB = "WF" Then lblRegion.Text = ("Уоллис и Футуна")
+    If sBB = "UY" Then lblRegion.Text = ("Уругвай")
+    If sBB = "FO" Then lblRegion.Text = ("Фарерские острова")
+    If sBB = "FJ" Then lblRegion.Text = ("Фиджи")
+    If sBB = "PH" Then lblRegion.Text = ("Филиппины")
+    If sBB = "FI" Then lblRegion.Text = ("Финляндия")
+    If sBB = "FK" Then lblRegion.Text = ("Фолклендские острова")
+    If sBB = "FR" Then lblRegion.Text = ("Франция")
+    If sBB = "PF" Then lblRegion.Text = ("Французская Полинезия")
+    If sBB = "TF" Then lblRegion.Text = ("Французские Южные и Антарктические Территории")
+    If sBB = "HM" Then lblRegion.Text = ("Херд и Макдональд")
+    If sBB = "HR" Then lblRegion.Text = ("Хорватия")
+    If sBB = "CF" Then lblRegion.Text = ("ЦАР")
+    If sBB = "TD" Then lblRegion.Text = ("Чад")
+    If sBB = "ME" Then lblRegion.Text = ("Черногория")
+    If sBB = "CZ" Then lblRegion.Text = ("Чехия")
+    If sBB = "CL" Then lblRegion.Text = ("Чили")
+    If sBB = "CH" Then lblRegion.Text = ("Швейцария")
+    If sBB = "SE" Then lblRegion.Text = ("Швеция")
+    If sBB = "SJ" Then lblRegion.Text = ("Шпицберген и Ян-Майен")
+    If sBB = "LK" Then lblRegion.Text = ("Шри-Ланка")
+    If sBB = "EC" Then lblRegion.Text = ("Эквадор")
+    If sBB = "GQ" Then lblRegion.Text = ("Экваториальная Гвинея")
+    If sBB = "ER" Then lblRegion.Text = ("Эритрея")
+    If sBB = "EE" Then lblRegion.Text = ("Эстония")
+    If sBB = "ET" Then lblRegion.Text = ("Эфиопия")
+    If sBB = "ZA" Then lblRegion.Text = ("ЮАР")
+    If sBB = "GS" Then lblRegion.Text = ("Южная Георгия и Южные Сандвичевы острова")
+    If sBB = "SS" Then lblRegion.Text = ("Южный Судан")
+    If sBB = "JM" Then lblRegion.Text = ("Ямайка")
+    If sBB = "JP" Then lblRegion.Text = ("Япония")
+    lblStatus.Text = ("Готово")
+  End If
+  If cmbType.Index = 1 Then
+    sRusN1 = String.Mid(txtTN.Text, 1, 1)
+    sRusN2 = String.Mid(txtTN.Text, 2, 1)
+    sRusN3 = String.Mid(txtTN.Text, 3, 1)
+    sRusN4 = String.Mid(txtTN.Text, 4, 1)
+    sRusN5 = String.Mid(txtTN.Text, 5, 1)
+    sRusN6 = String.Mid(txtTN.Text, 6, 1)
+    sRusN7 = String.Mid(txtTN.Text, 7, 1)
+    sRusN8 = String.Mid(txtTN.Text, 8, 1)
+    sRusN9 = String.Mid(txtTN.Text, 9, 1)
+    sRusN10 = String.Mid(txtTN.Text, 10, 1)
+    sRusN11 = String.Mid(txtTN.Text, 11, 1)
+    sRusN12 = String.Mid(txtTN.Text, 12, 1)
+    sRusN13 = String.Mid(txtTN.Text, 13, 1)
+    sRusN14 = String.Mid(txtTN.Text, 14, 1)
+    
+    
+    Try iNSumRus = ((Val(sRusN1) + Val(sRusN3) + Val(sRusN5) + Val(sRusN7) + Val(sRusN9) + Val(sRusN11) + Val(sRusN13)) * 3) + (Val(sRusN2) + Val(sRusN4) + Val(sRusN6) + Val(sRusN8) + Val(sRusN10) + Val(sRusN12))
+    If Error = True Then 
+      lblStatus.Text = ("Введите корректный почтовый идентификатор, например 60300095123456")
+      Return
+    End If    
+    iNModRus = iNSumRus Mod 10
+    
+    If txtTN.Length = 14 Then    
+      iNCtrlRus = 10 - iNModRus
+      If CInt(iNCtrlRus) = CInt(sRusN14) Then
+        lblValid.Text = ("Правильный")
+        lblValid.Foreground = Color.DarkGreen
+      Else
+        lblValid.Text = ("Не существует") 
+        lblValid.Foreground = Color.DarkRed
+      End If
+    Else
+      lblStatus.Text = ("Почтовый идентификатор должен состоять из 14 цифр.")
+      Return
+    End If
+    ' Определение региона отправителя
+    ' Determination of the region from which the postal item.
+    
+    sRusNReg = String.Mid(txtTN.Text, 1, 3)
+    
+    If sRusNReg = "603" Or sRusNReg = "606" Or sRusNReg = "607" Then
+      lblRegion.Text = ("Нижегородская область")
+    End If
+    If sRusNReg = "385" Then
+      lblRegion.Text = ("Республика Адыгея")
+    End If
+    If sRusNReg = "450" Or sRusNReg = "452" Or sRusNReg = "453" Then
+      lblRegion.Text = ("Республика Башкортостан")
+    End If
+    If sRusNReg = "670" Or sRusNReg = "671" Then
+      lblRegion.Text = ("Республика Бурятия")
+    End If
+    If sRusNReg = "649" Then
+      lblRegion.Text = ("Республика Алтай")
+    End If
+    If sRusNReg = "367" Or sRusNReg = "368" Then
+      lblRegion.Text = ("Республика Дагестан")
+    End If
+    If sRusNReg = "386" Then
+      lblRegion.Text = ("Республика Ингушетия")
+    End If
+    If sRusNReg = "360" Or sRusNReg = "361" Then
+      lblRegion.Text = ("Кабардино-Балкарская республика")
+    End If
+    If sRusNReg = "358" Or sRusNReg = "359" Then
+      lblRegion.Text = ("Республика Калмыкия")
+    End If
+    If sRusNReg = "369" Then
+      lblRegion.Text = ("Карачаево-Черкесская республика")
+    End If
+    If sRusNReg = "185" Or sRusNReg = "186" Then
+      lblRegion.Text = ("Республика Карелия")
+    End If
+    If sRusNReg = "167" Or sRusNReg = "169" Then
+      lblRegion.Text = ("Республика Коми")
+    End If
+    If sRusNReg = "424" Or sRusNReg = "425" Then
+      lblRegion.Text = ("Республика Марий Эл")
+    End If
+    If sRusNReg = "430" Or sRusNReg = "431" Then
+      lblRegion.Text = ("Республика Мордовия")
+    End If
+    If sRusNReg = "677" Or sRusNReg = "678" Then
+      lblRegion.Text = ("Республика Саха (Якутия)")
+    End If
+    If sRusNReg = "362" Or sRusNReg = "363" Then
+      lblRegion.Text = ("Республика Северная Осетия - Алания")
+    End If
+    If sRusNReg = "420" Or sRusNReg = "422" Or sRusNReg = "423" Then
+      lblRegion.Text = ("Республика Татарстан")
+    End If
+    If sRusNReg = "667" Or sRusNReg = "668" Then
+      lblRegion.Text = ("Республика Тыва (Тува)")
+    End If
+    If sRusNReg = "426" Or sRusNReg = "427" Then
+      lblRegion.Text = ("Республика Удмуртия")
+    End If
+    If sRusNReg = "655" Then
+      lblRegion.Text = ("Республика Хакасия")
+    End If
+    If sRusNReg = "364" Or sRusNReg = "366" Then
+      lblRegion.Text = ("Чеченская республика")
+    End If
+    If sRusNReg = "428" Or sRusNReg = "429" Then
+      lblRegion.Text = ("Республика Чувашия")
+    End If
+    If sRusNReg = "656" Or sRusNReg = "658" Or sRusNReg = "659" Then
+      lblRegion.Text = ("Алтайский край")
+    End If
+    If sRusNReg = "350" Or sRusNReg = "352" Or sRusNReg = "353" Or sRusNReg = "354" Or sRusNReg = "385" Then
+      lblRegion.Text = ("Краснодарский край")
+    End If
+    If sRusNReg = "660" Or sRusNReg = "662" Or sRusNReg = "663" Or sRusNReg = "647" Or sRusNReg = "648" Then
+      lblRegion.Text = ("Красноярский край")
+    End If
+    If sRusNReg = "690" Or sRusNReg = "692" Then
+      lblRegion.Text = ("Приморский край")
+    End If
+    If sRusNReg = "355" Or sRusNReg = "356" Or sRusNReg = "357" Then
+      lblRegion.Text = ("Ставропольский край")
+    End If
+    If sRusNReg = "680" Or sRusNReg = "681" Or sRusNReg = "682" Then
+      lblRegion.Text = ("Хабаровский край")
+    End If
+    If sRusNReg = "675" Or sRusNReg = "676" Then
+      lblRegion.Text = ("Амурская область")
+    End If
+    If sRusNReg = "163" Or sRusNReg = "164" Or sRusNReg = "165" Then
+      lblRegion.Text = ("Архангельская область")
+    End If
+    If sRusNReg = "414" Or sRusNReg = "416" Then
+      lblRegion.Text = ("Астраханская область")
+    End If
+    If sRusNReg = "308" Or sRusNReg = "309" Then
+      lblRegion.Text = ("Белгородская область")
+    End If
+    If sRusNReg = "241" Or sRusNReg = "242" Or sRusNReg = "243" Then
+      lblRegion.Text = ("Брянская область")
+    End If
+    If sRusNReg = "600" Or sRusNReg = "601" Or sRusNReg = "602" Then
+      lblRegion.Text = ("Владимирская область")
+    End If
+    If sRusNReg = "400" Or sRusNReg = "403" Or sRusNReg = "404" Then
+      lblRegion.Text = ("Волгоградская область")
+    End If
+    If sRusNReg = "160" Or sRusNReg = "161" Or sRusNReg = "162" Then
+      lblRegion.Text = ("Вологодская область")
+    End If
+    If sRusNReg = "394" Or sRusNReg = "396" Or sRusNReg = "397" Then
+      lblRegion.Text = ("Воронежская область")
+    End If
+    If sRusNReg = "153" Or sRusNReg = "155" Then
+      lblRegion.Text = ("Ивановская область")
+    End If
+    If sRusNReg = "664" Or sRusNReg = "665" Or sRusNReg = "666" Or sRusNReg = "669" Then
+      lblRegion.Text = ("Иркутская область")
+    End If
+    If sRusNReg = "236" Or sRusNReg = "238" Then
+      lblRegion.Text = ("Калининградская область")
+    End If
+    If sRusNReg = "248" Or sRusNReg = "249" Then
+      lblRegion.Text = ("Калужская область")
+    End If
+    If sRusNReg = "683" Or sRusNReg = "684" Or sRusNReg = "688" Then
+      lblRegion.Text = ("Камчатский край")
+    End If
+    If sRusNReg = "650" Or sRusNReg = "652" Or sRusNReg = "653" Or sRusNReg = "654" Then
+      lblRegion.Text = ("Кемеровская область")
+    End If
+    If sRusNReg = "610" Or sRusNReg = "612" Or sRusNReg = "613" Then
+      lblRegion.Text = ("Кировская область")
+    End If
+    If sRusNReg = "156" Or sRusNReg = "157" Then
+      lblRegion.Text = ("Костромская область")
+    End If
+    If sRusNReg = "640" Or sRusNReg = "641" Then
+      lblRegion.Text = ("Курганская область")
+    End If
+    If sRusNReg = "305" Or sRusNReg = "306" Or sRusNReg = "307" Then
+      lblRegion.Text = ("Курская область")
+    End If
+    If sRusNReg = "187" Or sRusNReg = "188" Then
+      lblRegion.Text = ("Ленинградская область")
+    End If
+    If sRusNReg = "398" Or sRusNReg = "399" Then
+      lblRegion.Text = ("Липецкая область")
+    End If
+    If sRusNReg = "685" Or sRusNReg = "686" Then
+      lblRegion.Text = ("Магаданская область")
+    End If
+    If sRusNReg = "140" Or sRusNReg = "141" Or sRusNReg = "142" Or sRusNReg = "143" Or sRusNReg = "144" Then
+      lblRegion.Text = ("Московская область")
+    End If
+    If sRusNReg = "183" Or sRusNReg = "184" Then
+      lblRegion.Text = ("Мурманская область")
+    End If
+    If sRusNReg = "173" Or sRusNReg = "174" Or sRusNReg = "175" Then
+      lblRegion.Text = ("Новгородская область")
+    End If
+    If sRusNReg = "630" Or sRusNReg = "632" Or sRusNReg = "633" Then
+      lblRegion.Text = ("Новосибирская область")
+    End If
+    If sRusNReg = "644" Or sRusNReg = "646" Then
+      lblRegion.Text = ("Омская область")
+    End If
+    If sRusNReg = "460" Or sRusNReg = "461" Or sRusNReg = "462" Then
+      lblRegion.Text = ("Оренбургская область")
+    End If
+    If sRusNReg = "302" Or sRusNReg = "303" Then
+      lblRegion.Text = ("Орловская область")
+    End If
+    If sRusNReg = "440" Or sRusNReg = "442" Then
+      lblRegion.Text = ("Пензенская область")
+    End If
+    If sRusNReg = "614" Or sRusNReg = "617" Or sRusNReg = "618" Then
+      lblRegion.Text = ("Пермский край")
+    End If
+    If sRusNReg = "180" Or sRusNReg = "181" Or sRusNReg = "182" Then
+      lblRegion.Text = ("Псковская область")
+    End If
+    If sRusNReg = "344" Or sRusNReg = "346" Or sRusNReg = "347" Then
+      lblRegion.Text = ("Ростовская область")
+    End If
+    If sRusNReg = "390" Or sRusNReg = "391" Then
+      lblRegion.Text = ("Рязанская область")
+    End If
+    If sRusNReg = "443" Or sRusNReg = "445" Or sRusNReg = "446" Then
+      lblRegion.Text = ("Самарская область")
+    End If
+    If sRusNReg = "410" Or sRusNReg = "412" Or sRusNReg = "413" Then
+      lblRegion.Text = ("Саратовская область")
+    End If
+    If sRusNReg = "693" Or sRusNReg = "694" Then
+      lblRegion.Text = ("Сахалинская область")
+    End If
+    If sRusNReg = "620" Or sRusNReg = "623" Or sRusNReg = "624" Then
+      lblRegion.Text = ("Свердловская область")
+    End If
+    If sRusNReg = "214" Or sRusNReg = "215" Or sRusNReg = "216" Then
+      lblRegion.Text = ("Смоленская область")
+    End If
+    If sRusNReg = "392" Or sRusNReg = "393" Then
+      lblRegion.Text = ("Тамбовская область")
+    End If
+    If sRusNReg = "170" Or sRusNReg = "171" Or sRusNReg = "172" Then
+      lblRegion.Text = ("Тверская область")
+    End If
+    If sRusNReg = "634" Or sRusNReg = "636" Then
+      lblRegion.Text = ("Томская область")
+    End If
+    If sRusNReg = "300" Or sRusNReg = "301" Then
+      lblRegion.Text = ("Тульская область")
+    End If
+    If sRusNReg = "625" Or sRusNReg = "626" Or sRusNReg = "627" Then
+      lblRegion.Text = ("Тюменская область")
+    End If
+    If sRusNReg = "432" Or sRusNReg = "433" Then
+      lblRegion.Text = ("Ульяновская область")
+    End If
+    If sRusNReg = "454" Or sRusNReg = "456" Or sRusNReg = "457" Then
+      lblRegion.Text = ("Челябинская область")
+    End If
+    If sRusNReg = "672" Or sRusNReg = "673" Or sRusNReg = "674" Then
+      lblRegion.Text = ("Забайкальский край")
+    End If
+    If sRusNReg = "150" Or sRusNReg = "152" Then
+      lblRegion.Text = ("Ярославская область")
+    End If
+    If sRusNReg = "101" Or sRusNReg = "105" Or sRusNReg = "106" Or sRusNReg = "107" Or sRusNReg = "108" Or sRusNReg = "109" Or sRusNReg = "110" Or sRusNReg = "111" Or sRusNReg = "112" Or sRusNReg = "113" Or sRusNReg = "114" Or sRusNReg = "115" Or sRusNReg = "116" Or sRusNReg = "117" Or sRusNReg = "118" Or sRusNReg = "119" Or sRusNReg = "120" Or sRusNReg = "121" Or sRusNReg = "122" Or sRusNReg = "123" Or sRusNReg = "124" Or sRusNReg = "125" Or sRusNReg = "126" Or sRusNReg = "127" Or sRusNReg = "128" Or sRusNReg = "129" Then
+      lblRegion.Text = ("Москва")
+    End If
+    If sRusNReg = "199" Or sRusNReg = "198" Or sRusNReg = "197" Or sRusNReg = "196" Or sRusNReg = "195" Or sRusNReg = "194" Or sRusNReg = "193" Or sRusNReg = "192" Or sRusNReg = "191" Or sRusNReg = "190" Or sRusNReg = "188" Then
+      lblRegion.Text = ("Санкт-Петербург")
+    End If
+    If sRusNReg = "679" Then
+      lblRegion.Text = ("Еврейская автономная область")
+    End If
+    If sRusNReg = "166" Then
+      lblRegion.Text = ("Ненецкий автономный округ")
+    End If
+    If sRusNReg = "628" Then
+      lblRegion.Text = ("Ханты-Мансийский автономный округ")
+    End If
+    If sRusNReg = "689" Then
+      lblRegion.Text = ("Чукотский автономный округ")
+    End If
+    If sRusNReg = "629" Then
+      lblRegion.Text = ("Ямало-Ненецкий автономный округ")
+    End If
+    lblStatus.Text = ("Готово")
+    
+   'Определение года и месяца почтового отправления
+   'Determination of the year and month of the postal item
+    
+    sRusNDate = String.Mid(txtTN.Text, 7, 2)
+    If sRusNDate = "85" Then
+      lblMainData.Text = ("Апрель 2015")
+    End If
+    If sRusNDate = "86" Then
+      lblMainData.Text = ("Май 2015")
+    End If
+    If sRusNDate = "87" Then
+      lblMainData.Text = ("Июнь 2015")
+    End If
+    If sRusNDate = "88" Then
+      lblMainData.Text = ("Июль 2015")
+    End If
+    If sRusNDate = "89" Then
+      lblMainData.Text = ("Август 2015")
+    End If
+    If sRusNDate = "90" Then
+      lblMainData.Text = ("Сентябрь 2015")
+    End If
+    If sRusNDate = "91" Then
+      lblMainData.Text = ("Октябрь 2015")
+    End If
+    If sRusNDate = "92" Then
+      lblMainData.Text = ("Ноябрь 2015")
+    End If
+    If sRusNDate = "93" Then
+      lblMainData.Text = ("Декабрь 2015")
+    End If
+    If sRusNDate = "94" Then
+      lblMainData.Text = ("Январь 2016")
+    End If
+    If sRusNDate = "95" Then
+      lblMainData.Text = ("Февраль 2016")
+    End If
+    If sRusNDate = "96" Then
+      lblMainData.Text = ("Март 2016")
+    End If
+    If sRusNDate = "01" Then
+      lblMainData.Text = ("Апрель 2016")
+    End If
+    If sRusNDate = "02" Then
+      lblMainData.Text = ("Май 2016")
+    End If
+    If sRusNDate = "03" Then
+      lblMainData.Text = ("Июнь 2016")
+    End If
+    If sRusNDate = "04" Then
+      lblMainData.Text = ("Июль 2016")
+    End If
+    If sRusNDate = "05" Then
+      lblMainData.Text = ("Август 2016")
+    End If
+    If sRusNDate = "06" Then
+      lblMainData.Text = ("Сентябрь 2016")
+    End If
+    If sRusNDate = "07" Then
+      lblMainData.Text = ("Октябрь 2016")
+    End If
+    If sRusNDate = "08" Then
+      lblMainData.Text = ("Ноябрь 2016")
+    End If
+    If sRusNDate = "09" Then
+      lblMainData.Text = ("Декабрь 2016")
+    End If
+    If sRusNDate = "10" Then
+      lblMainData.Text = ("Январь 2017")
+    End If
+    If sRusNDate = "11" Then
+      lblMainData.Text = ("Февраль 2017")
+    End If
+    If sRusNDate = "12" Then
+      lblMainData.Text = ("Март 2017")
+    End If
+    If Val(sRusNDate) > 12 And Val(sRusNDate) < 85 Then
+      lblMainData.Text = ("раньше 01.04.2015 или позже 31.03.2017")
+    End If
+  End If
+End
+
+Public Sub mnuActionsCheck_Click()
+
+  btnCheck_Click()
+
+End
+
+
+Public Sub mnuHelpOnline_Click()
+
+Exec ["xdg-open", "http://open.ssvarentsov.ru/docs/"]
+
+End
+
+Public Sub mnuHelpBugReport_Click()
+
+Exec ["xdg-open", "http://open.ssvarentsov.ru/bugs/view_all_bug_page.php"]
+
+End
+
+Public Sub mnuHelpAbout_Click()
+
+  frmAbout.ShowDialog
+
+End
+
+Public Sub cmbType_Click()
+
+  If cmbType.Index = 0 Then
+    lblValidText.Text = ("Валидность:")
+    lblMainDataText.Text = ("Тип отправления:")
+    lblRegionText.Text = ("Страна отправителя:")
+  Endif
+  If cmbType.Index = 1 Then
+    lblValidText.Text = ("Валидность:")
+    lblMainDataText.Text = ("Дата отправления:")
+    lblRegionText.Text = ("Регион отправителя:")
+  Endif
+
+End

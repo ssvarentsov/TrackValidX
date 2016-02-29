@@ -1,0 +1,1619 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TrackValid 3.8.4\n"
+"PO-Revision-Date: 2016-02-27 15:15 UTC\n"
+"Last-Translator: ssvarentsov <sergey@ssvarentsov.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .project:1 FMain.form:32 frmAbout.form:21
+msgid "TrackValidX"
+msgstr "-"
+
+#: .project:2
+msgid "Validator of mail ID's"
+msgstr "Валидатор почтовых трек-номеров"
+
+#: FMain.class:85
+msgid "Ошибка: "
+msgstr "Ошибка: "
+
+#: FMain.class:100
+msgid "Правильный"
+msgstr "Правильный"
+
+#: FMain.class:103
+msgid "Не существует"
+msgstr "Не существует"
+
+#: FMain.class:107
+msgid "Заказное письмо, не регистрируется, не застраховано"
+msgstr "Заказное письмо, не регистрируется, не застраховано"
+
+#: FMain.class:108
+msgid "Для внутреннего использования, двухстороннего и многостороннего"
+msgstr "Для внутреннего использования, двухстороннего и многостороннего"
+
+#: FMain.class:109
+msgid "Простая посылка, вес более 2 кг, отслеживается"
+msgstr "Простая посылка, вес более 2 кг, отслеживается"
+
+#: FMain.class:111
+msgid "Экспресс-отправление EMS, отслеживается"
+msgstr "Экспресс-отправление EMS, отслеживается"
+
+#: FMain.class:112
+msgid "Письмо или мелкий пакет, экспресс-доставка, не отслеживается"
+msgstr "Письмо или мелкий пакет, экспресс-доставка, не отслеживается"
+
+#: FMain.class:115
+msgid "Мелкий пакет или письмо, отслеживается, не застраховано"
+msgstr "Мелкий пакет или письмо, отслеживается, не застраховано"
+
+#: FMain.class:116
+msgid "Отправление с объявленной ценностью или застрахованное"
+msgstr "Отправление с объявленной ценностью или застрахованное"
+
+#: FMain.class:119
+msgid "Китай"
+msgstr "Китай"
+
+#: FMain.class:120
+msgid "Австралия"
+msgstr "Австралия"
+
+#: FMain.class:121
+msgid "Австрия"
+msgstr "Австрия"
+
+#: FMain.class:122
+msgid "Азербайджан"
+msgstr "Азербайджан"
+
+#: FMain.class:123
+msgid "Аландские острова"
+msgstr "Аландские острова"
+
+#: FMain.class:124
+msgid "Албания"
+msgstr "Албания"
+
+#: FMain.class:125
+msgid "Алжир"
+msgstr "Алжир"
+
+#: FMain.class:126
+msgid "Американские Виргинские острова"
+msgstr "Американские Виргинские острова"
+
+#: FMain.class:127
+msgid "Американское Самоа"
+msgstr "Американское Самоа"
+
+#: FMain.class:128
+msgid "Ангилья"
+msgstr "Ангилья"
+
+#: FMain.class:129
+msgid "Ангола"
+msgstr "Ангола"
+
+#: FMain.class:130
+msgid "Андорра"
+msgstr "Андорра"
+
+#: FMain.class:131
+msgid "Антарктида"
+msgstr "Антарктида"
+
+#: FMain.class:132
+msgid "Антигуа и Барбуда"
+msgstr "Антигуа и Барбуда"
+
+#: FMain.class:133
+msgid "Аргентина"
+msgstr "Аргентина"
+
+#: FMain.class:134
+msgid "Армения"
+msgstr "Армения"
+
+#: FMain.class:135
+msgid "Аруба"
+msgstr "Аруба"
+
+#: FMain.class:136
+msgid "Афганистан"
+msgstr "Афганистан"
+
+#: FMain.class:137
+msgid "Багамы"
+msgstr "Багамы"
+
+#: FMain.class:138
+msgid "Бангладеш"
+msgstr "Бангладеш"
+
+#: FMain.class:139
+msgid "Барбадос"
+msgstr "Барбадос"
+
+#: FMain.class:140
+msgid "Бахрейн"
+msgstr "Бахрейн"
+
+#: FMain.class:141
+msgid "Белиз"
+msgstr "Белиз"
+
+#: FMain.class:142
+msgid "Белоруссия"
+msgstr "Белоруссия"
+
+#: FMain.class:143
+msgid "Бельгия"
+msgstr "Бельгия"
+
+#: FMain.class:144
+msgid "Бенин"
+msgstr "Бенин"
+
+#: FMain.class:145
+msgid "Бермуды"
+msgstr "Бермуды"
+
+#: FMain.class:146
+msgid "Болгария"
+msgstr "Болгария"
+
+#: FMain.class:147
+msgid "Боливия"
+msgstr "Боливия"
+
+#: FMain.class:148
+msgid "Бонэйр, Синт-Эстатиус и Саба"
+msgstr "Бонэйр, Синт-Эстатиус и Саба"
+
+#: FMain.class:149
+msgid "Босния и Герцеговина"
+msgstr "Босния и Герцеговина"
+
+#: FMain.class:150
+msgid "Ботсвана"
+msgstr "Ботсвана"
+
+#: FMain.class:151
+msgid "Бразилия"
+msgstr "Бразилия"
+
+#: FMain.class:152
+msgid "Британская территория в Индийском океане"
+msgstr "Британская территория в Индийском океане"
+
+#: FMain.class:153
+msgid "Британские Виргинские острова"
+msgstr "Британские Виргинские острова"
+
+#: FMain.class:154
+msgid "Бруней"
+msgstr "Бруней"
+
+#: FMain.class:155
+msgid "Буркина-Фасо"
+msgstr "Буркина-Фасо"
+
+#: FMain.class:156
+msgid "Бурунди"
+msgstr "Бурунди"
+
+#: FMain.class:157
+msgid "Бутан"
+msgstr "Бутан"
+
+#: FMain.class:158
+msgid "Вануату"
+msgstr "Вануату"
+
+#: FMain.class:159
+msgid "Ватикан"
+msgstr "Ватикан"
+
+#: FMain.class:160
+msgid "Великобритания"
+msgstr "Великобритания"
+
+#: FMain.class:161
+msgid "Венгрия"
+msgstr "Венгрия"
+
+#: FMain.class:162
+msgid "Венесуэла"
+msgstr "Венесуэла"
+
+#: FMain.class:163
+msgid "Внешние малые острова (США)"
+msgstr "Внешние малые острова (США)"
+
+#: FMain.class:164
+msgid "Восточный Тимор"
+msgstr "Восточный Тимор"
+
+#: FMain.class:165
+msgid "Вьетнам"
+msgstr "Вьетнам"
+
+#: FMain.class:166
+msgid "Габон"
+msgstr "Габон"
+
+#: FMain.class:167
+msgid "Гаити"
+msgstr "Гаити"
+
+#: FMain.class:168
+msgid "Гайана"
+msgstr "Гайана"
+
+#: FMain.class:169
+msgid "Гамбия"
+msgstr "Гамбия"
+
+#: FMain.class:170
+msgid "Гана"
+msgstr "Гана"
+
+#: FMain.class:171
+msgid "Гваделупа"
+msgstr "Гваделупа"
+
+#: FMain.class:172
+msgid "Гватемала"
+msgstr "Гватемала"
+
+#: FMain.class:173
+msgid "Гвиана"
+msgstr "Гвиана"
+
+#: FMain.class:174
+msgid "Гвинея"
+msgstr "Гвинея"
+
+#: FMain.class:175
+msgid "Гвинея-Бисау"
+msgstr "Гвинея-Бисау"
+
+#: FMain.class:176
+msgid "Германия"
+msgstr "Германия"
+
+#: FMain.class:177
+msgid "Гернси"
+msgstr "Гернси"
+
+#: FMain.class:178
+msgid "Гибралтар"
+msgstr "Гибралтар"
+
+#: FMain.class:179
+msgid "Гондурас"
+msgstr "Гондурас"
+
+#: FMain.class:180
+msgid "Гонконг"
+msgstr "Гонконг"
+
+#: FMain.class:181
+msgid "Гренада"
+msgstr "Гренада"
+
+#: FMain.class:182
+msgid "Гренландия"
+msgstr "Гренландия"
+
+#: FMain.class:183
+msgid "Греция"
+msgstr "Греция"
+
+#: FMain.class:184
+msgid "Грузия"
+msgstr "Грузия"
+
+#: FMain.class:185
+msgid "Гуам"
+msgstr "Гуам"
+
+#: FMain.class:186
+msgid "Дания"
+msgstr "Дания"
+
+#: FMain.class:187
+msgid "Джерси (остров)"
+msgstr "Джерси (остров)"
+
+#: FMain.class:188
+msgid "Джибути"
+msgstr "Джибути"
+
+#: FMain.class:189
+msgid "Доминика"
+msgstr "Доминика"
+
+#: FMain.class:190
+msgid "Доминиканская республика"
+msgstr "Доминиканская республика"
+
+#: FMain.class:191
+msgid "Демократическая Республика Конго"
+msgstr "Демократическая Республика Конго"
+
+#: FMain.class:192
+msgid "Европейский союз"
+msgstr "Европейский союз"
+
+#: FMain.class:193
+msgid "Египет"
+msgstr "Египет"
+
+#: FMain.class:194
+msgid "Замбия"
+msgstr "Замбия"
+
+#: FMain.class:195
+msgid "Западная Сахара"
+msgstr "Западная Сахара"
+
+#: FMain.class:196
+msgid "Зимбабве"
+msgstr "Зимбабве"
+
+#: FMain.class:197
+msgid "Израиль"
+msgstr "Израиль"
+
+#: FMain.class:198
+msgid "Индия"
+msgstr "Индия"
+
+#: FMain.class:199
+msgid "Индонезия"
+msgstr "Индонезия"
+
+#: FMain.class:200
+msgid "Иордания"
+msgstr "Иордания"
+
+#: FMain.class:201
+msgid "Ирак"
+msgstr "Ирак"
+
+#: FMain.class:202
+msgid "Иран"
+msgstr "Иран"
+
+#: FMain.class:203
+msgid "Ирландия"
+msgstr "Ирландия"
+
+#: FMain.class:204
+msgid "Исландия"
+msgstr "Исландия"
+
+#: FMain.class:205
+msgid "Испания"
+msgstr "Испания"
+
+#: FMain.class:206
+msgid "Италия"
+msgstr "Италия"
+
+#: FMain.class:207
+msgid "Йемен"
+msgstr "Йемен"
+
+#: FMain.class:208
+msgid "Кабо-Верде"
+msgstr "Кабо-Верде"
+
+#: FMain.class:209
+msgid "Казахстан"
+msgstr "Казахстан"
+
+#: FMain.class:210
+msgid "Каймановы острова"
+msgstr "Каймановы острова"
+
+#: FMain.class:211
+msgid "Камбоджа"
+msgstr "Камбоджа"
+
+#: FMain.class:212
+msgid "Камерун"
+msgstr "Камерун"
+
+#: FMain.class:213
+msgid "Канада"
+msgstr "Канада"
+
+#: FMain.class:214
+msgid "Катар"
+msgstr "Катар"
+
+#: FMain.class:215
+msgid "Кения"
+msgstr "Кения"
+
+#: FMain.class:216
+msgid "Кипр"
+msgstr "Кипр"
+
+#: FMain.class:217
+msgid "Киргизия"
+msgstr "Киргизия"
+
+#: FMain.class:218
+msgid "Кирибати"
+msgstr "Кирибати"
+
+#: FMain.class:219
+msgid "Китайская Республика"
+msgstr "Китайская Республика"
+
+#: FMain.class:220
+msgid "КНДР"
+msgstr "КНДР"
+
+#: FMain.class:221
+msgid "Кокосовые острова"
+msgstr "Кокосовые острова"
+
+#: FMain.class:222
+msgid "Колумбия"
+msgstr "Колумбия"
+
+#: FMain.class:223
+msgid "Коморы"
+msgstr "Коморы"
+
+#: FMain.class:224
+msgid "Коста-Рика"
+msgstr "Коста-Рика"
+
+#: FMain.class:225
+msgid "Кот-д'Ивуар"
+msgstr "Кот-д'Ивуар"
+
+#: FMain.class:226
+msgid "Куба"
+msgstr "Куба"
+
+#: FMain.class:227
+msgid "Кувейт"
+msgstr "Кувейт"
+
+#: FMain.class:228
+msgid "Кюрасао"
+msgstr "Кюрасао"
+
+#: FMain.class:229
+msgid "Лаос"
+msgstr "Лаос"
+
+#: FMain.class:230
+msgid "Латвия"
+msgstr "Латвия"
+
+#: FMain.class:231
+msgid "Лесото"
+msgstr "Лесото"
+
+#: FMain.class:232
+msgid "Либерия"
+msgstr "Либерия"
+
+#: FMain.class:233
+msgid "Ливан"
+msgstr "Ливан"
+
+#: FMain.class:234
+msgid "Ливия"
+msgstr "Ливия"
+
+#: FMain.class:235
+msgid "Литва"
+msgstr "Литва"
+
+#: FMain.class:236
+msgid "Лихтенштейн"
+msgstr "Лихтенштейн"
+
+#: FMain.class:237
+msgid "Люксембург"
+msgstr "Люксембург"
+
+#: FMain.class:238
+msgid "Маврикий"
+msgstr "Маврикий"
+
+#: FMain.class:239
+msgid "Мавритания"
+msgstr "Мавритания"
+
+#: FMain.class:240
+msgid "Мадагаскар"
+msgstr "Мадагаскар"
+
+#: FMain.class:241
+msgid "Майотта"
+msgstr "Майотта"
+
+#: FMain.class:242
+msgid "Макао"
+msgstr "Макао"
+
+#: FMain.class:243
+msgid "Македония"
+msgstr "Македония"
+
+#: FMain.class:244
+msgid "Малави"
+msgstr "Малави"
+
+#: FMain.class:245
+msgid "Малайзия"
+msgstr "Малайзия"
+
+#: FMain.class:246
+msgid "Мали"
+msgstr "Мали"
+
+#: FMain.class:247
+msgid "Мальдивы"
+msgstr "Мальдивы"
+
+#: FMain.class:248
+msgid "Мальта"
+msgstr "Мальта"
+
+#: FMain.class:249
+msgid "Марокко"
+msgstr "Марокко"
+
+#: FMain.class:250
+msgid "Мартиника"
+msgstr "Мартиника"
+
+#: FMain.class:251
+msgid "Маршалловы Острова"
+msgstr "Маршалловы Острова"
+
+#: FMain.class:252
+msgid "Мексика"
+msgstr "Мексика"
+
+#: FMain.class:253
+msgid "Микронезия"
+msgstr "Микронезия"
+
+#: FMain.class:254
+msgid "Мозамбик"
+msgstr "Мозамбик"
+
+#: FMain.class:255
+msgid "Молдавия"
+msgstr "Молдавия"
+
+#: FMain.class:256
+msgid "Монако"
+msgstr "Монако"
+
+#: FMain.class:257
+msgid "Монголия"
+msgstr "Монголия"
+
+#: FMain.class:258
+msgid "Монтсеррат"
+msgstr "Монтсеррат"
+
+#: FMain.class:259
+msgid "Мьянма"
+msgstr "Мьянма"
+
+#: FMain.class:260
+msgid "Намибия"
+msgstr "Намибия"
+
+#: FMain.class:261
+msgid "Науру"
+msgstr "Науру"
+
+#: FMain.class:262
+msgid "Непар"
+msgstr "Непар"
+
+#: FMain.class:263
+msgid "Нигер"
+msgstr "Нигер"
+
+#: FMain.class:264
+msgid "Нигерия"
+msgstr "Нигерия"
+
+#: FMain.class:265
+msgid "Нидерланды"
+msgstr "Нидерланды"
+
+#: FMain.class:266
+msgid "Никарагуа"
+msgstr "Никарагуа"
+
+#: FMain.class:267
+msgid "Ниуэ"
+msgstr "Ниуэ"
+
+#: FMain.class:268
+msgid "Новая Зеландия"
+msgstr "Новая Зеландия"
+
+#: FMain.class:269
+msgid "Новая Каледония"
+msgstr "Новая Каледония"
+
+#: FMain.class:270
+msgid "Норвегия"
+msgstr "Норвегия"
+
+#: FMain.class:271
+msgid "ОАЭ"
+msgstr "ОАЭ"
+
+#: FMain.class:272
+msgid "Оман"
+msgstr "Оман"
+
+#: FMain.class:273
+msgid "Остров Буве"
+msgstr "Остров Буве"
+
+#: FMain.class:274
+msgid "Остров Мэн"
+msgstr "Остров Мэн"
+
+#: FMain.class:275
+msgid "Остров Кука"
+msgstr "Остров Кука"
+
+#: FMain.class:276
+msgid "Остров Норфолк"
+msgstr "Остров Норфолк"
+
+#: FMain.class:277
+msgid "Остров Рождества"
+msgstr "Остров Рождества"
+
+#: FMain.class:278
+msgid "Острова Питкэрн"
+msgstr "Острова Питкэрн"
+
+#: FMain.class:279
+msgid "Острова Святой Елены, Вознесения и Тристан-да-Кунья"
+msgstr "Острова Святой Елены, Вознесения и Тристан-да-Кунья"
+
+#: FMain.class:280
+msgid "Пакистан"
+msgstr "Пакистан"
+
+#: FMain.class:281
+msgid "Палау"
+msgstr "Палау"
+
+#: FMain.class:282
+msgid "Государство Палестина"
+msgstr "Государство Палестина"
+
+#: FMain.class:283
+msgid "Панама"
+msgstr "Панама"
+
+#: FMain.class:284
+msgid "Папуа - Новая Гвинея"
+msgstr "Папуа - Новая Гвинея"
+
+#: FMain.class:285
+msgid "Парагвай"
+msgstr "Парагвай"
+
+#: FMain.class:286
+msgid "Перу"
+msgstr "Перу"
+
+#: FMain.class:287
+msgid "Польша"
+msgstr "Польша"
+
+#: FMain.class:288
+msgid "Португалия"
+msgstr "Португалия"
+
+#: FMain.class:289
+msgid "Пуэрто-Рико"
+msgstr "Пуэрто-Рико"
+
+#: FMain.class:290
+msgid "Республика Конго"
+msgstr "Республика Конго"
+
+#: FMain.class:291
+msgid "Республика Корея"
+msgstr "Республика Корея"
+
+#: FMain.class:292
+msgid "Реюньон"
+msgstr "Реюньон"
+
+#: FMain.class:293
+msgid "Российская Федерация"
+msgstr "Российская Федерация"
+
+#: FMain.class:294
+msgid "Руанда"
+msgstr "Руанда"
+
+#: FMain.class:295
+msgid "Румыния"
+msgstr "Румыния"
+
+#: FMain.class:296
+msgid "Сальвадор"
+msgstr "Сальвадор"
+
+#: FMain.class:297
+msgid "Самоа"
+msgstr "Самоа"
+
+#: FMain.class:298
+msgid "Сан-Марино"
+msgstr "Сан-Марино"
+
+#: FMain.class:299
+msgid "Сан-Томе и Принсипи"
+msgstr "Сан-Томе и Принсипи"
+
+#: FMain.class:300
+msgid "Саудовская Аравия"
+msgstr "Саудовская Аравия"
+
+#: FMain.class:301
+msgid "Свазиленд"
+msgstr "Свазиленд"
+
+#: FMain.class:302
+msgid "Северные Марианские острова"
+msgstr "Северные Марианские острова"
+
+#: FMain.class:303
+msgid "Сейшельские Острова"
+msgstr "Сейшельские Острова"
+
+#: FMain.class:304
+msgid "Сен-Бартелеми"
+msgstr "Сен-Бартелеми"
+
+#: FMain.class:305
+msgid "Сен-Мартен"
+msgstr "Сен-Мартен"
+
+#: FMain.class:306
+msgid "Сен-Пьер и Микелон"
+msgstr "Сен-Пьер и Микелон"
+
+#: FMain.class:307
+msgid "Сенегал"
+msgstr "Сенегал"
+
+#: FMain.class:308
+msgid "Сент-Винсент и Гренадины"
+msgstr "Сент-Винсент и Гренадины"
+
+#: FMain.class:309
+msgid "Сент-Китс и Невис"
+msgstr "Сент-Китс и Невис"
+
+#: FMain.class:310
+msgid "Сент-Люсия"
+msgstr "Сент-Люсия"
+
+#: FMain.class:311
+msgid "Сербия"
+msgstr "Сербия"
+
+#: FMain.class:312
+msgid "Сингапур"
+msgstr "Сингапур"
+
+#: FMain.class:313
+msgid "Синт-Мартен"
+msgstr "Синт-Мартен"
+
+#: FMain.class:314
+msgid "Сирия"
+msgstr "Сирия"
+
+#: FMain.class:315
+msgid "Словакия"
+msgstr "Словакия"
+
+#: FMain.class:316
+msgid "Словения"
+msgstr "Словения"
+
+#: FMain.class:317
+msgid "Соломоновы Острова"
+msgstr "Соломоновы Острова"
+
+#: FMain.class:318
+msgid "Сомали"
+msgstr "Сомали"
+
+#: FMain.class:319
+msgid "Судан"
+msgstr "Судан"
+
+#: FMain.class:320
+msgid "не существует"
+msgstr "не существует"
+
+#: FMain.class:321
+msgid "Суринам"
+msgstr "Суринам"
+
+#: FMain.class:322
+msgid "США"
+msgstr "США"
+
+#: FMain.class:323
+msgid "Сьерра-Леоне"
+msgstr "Сьерра-Леоне"
+
+#: FMain.class:324
+msgid "Таджикистан"
+msgstr "Таджикистан"
+
+#: FMain.class:325
+msgid "Тайланд"
+msgstr "Тайланд"
+
+#: FMain.class:326
+msgid "Танзания"
+msgstr "Танзания"
+
+#: FMain.class:327
+msgid "Тёркс и Кайкос"
+msgstr "Тёркс и Кайкос"
+
+#: FMain.class:328
+msgid "Того"
+msgstr "Того"
+
+#: FMain.class:329
+msgid "Токелау"
+msgstr "Токелау"
+
+#: FMain.class:330
+msgid "Тонга"
+msgstr "Тонга"
+
+#: FMain.class:331
+msgid "Тринидад и Тобаго"
+msgstr "Тринидад и Тобаго"
+
+#: FMain.class:332
+msgid "Тувалу"
+msgstr "Тувалу"
+
+#: FMain.class:333
+msgid "Тунис"
+msgstr "Тунис"
+
+#: FMain.class:334
+msgid "Туркмения"
+msgstr "Туркмения"
+
+#: FMain.class:335
+msgid "Турция"
+msgstr "Турция"
+
+#: FMain.class:336
+msgid "Уганда"
+msgstr "Уганда"
+
+#: FMain.class:337
+msgid "Узбекистан"
+msgstr "Узбекистан"
+
+#: FMain.class:338
+msgid "Украина"
+msgstr "Украина"
+
+#: FMain.class:339
+msgid "Уоллис и Футуна"
+msgstr "Уоллис и Футуна"
+
+#: FMain.class:340
+msgid "Уругвай"
+msgstr "Уругвай"
+
+#: FMain.class:341
+msgid "Фарерские острова"
+msgstr "Фарерские острова"
+
+#: FMain.class:342
+msgid "Фиджи"
+msgstr "Фиджи"
+
+#: FMain.class:343
+msgid "Филиппины"
+msgstr "Филиппины"
+
+#: FMain.class:344
+msgid "Финляндия"
+msgstr "Финляндия"
+
+#: FMain.class:345
+msgid "Фолклендские острова"
+msgstr "Фолклендские острова"
+
+#: FMain.class:346
+msgid "Франция"
+msgstr "Франция"
+
+#: FMain.class:347
+msgid "Французская Полинезия"
+msgstr "Французская Полинезия"
+
+#: FMain.class:348
+msgid "Французские Южные и Антарктические Территории"
+msgstr "Французские Южные и Антарктические Территории"
+
+#: FMain.class:349
+msgid "Херд и Макдональд"
+msgstr "Херд и Макдональд"
+
+#: FMain.class:350
+msgid "Хорватия"
+msgstr "Хорватия"
+
+#: FMain.class:351
+msgid "ЦАР"
+msgstr "ЦАР"
+
+#: FMain.class:352
+msgid "Чад"
+msgstr "Чад"
+
+#: FMain.class:353
+msgid "Черногория"
+msgstr "Черногория"
+
+#: FMain.class:354
+msgid "Чехия"
+msgstr "Чехия"
+
+#: FMain.class:355
+msgid "Чили"
+msgstr "Чили"
+
+#: FMain.class:356
+msgid "Швейцария"
+msgstr "Швейцария"
+
+#: FMain.class:357
+msgid "Швеция"
+msgstr "Швеция"
+
+#: FMain.class:358
+msgid "Шпицберген и Ян-Майен"
+msgstr "Шпицберген и Ян-Майен"
+
+#: FMain.class:359
+msgid "Шри-Ланка"
+msgstr "Шри-Ланка"
+
+#: FMain.class:360
+msgid "Эквадор"
+msgstr "Эквадор"
+
+#: FMain.class:361
+msgid "Экваториальная Гвинея"
+msgstr "Экваториальная Гвинея"
+
+#: FMain.class:362
+msgid "Эритрея"
+msgstr "Эритрея"
+
+#: FMain.class:363
+msgid "Эстония"
+msgstr "Эстония"
+
+#: FMain.class:364
+msgid "Эфиопия"
+msgstr "Эфиопия"
+
+#: FMain.class:365
+msgid "ЮАР"
+msgstr "ЮАР"
+
+#: FMain.class:366
+msgid "Южная Георгия и Южные Сандвичевы острова"
+msgstr "Южная Георгия и Южные Сандвичевы острова"
+
+#: FMain.class:367
+msgid "Южный Судан"
+msgstr "Южный Судан"
+
+#: FMain.class:368
+msgid "Ямайка"
+msgstr "Ямайка"
+
+#: FMain.class:369
+msgid "Япония"
+msgstr "Япония"
+
+#: FMain.class:370
+msgid "Готово"
+msgstr "Готово"
+
+#: FMain.class:391
+msgid "Введите корректный почтовый идентификатор, например 60300095123456"
+msgstr "Введите корректный почтовый идентификатор, например 60300095123456"
+
+#: FMain.class:406
+msgid "Почтовый идентификатор должен состоять из 14 цифр."
+msgstr "Почтовый идентификатор должен состоять из 14 цифр."
+
+#: FMain.class:415
+msgid "Нижегородская область"
+msgstr "Нижегородская область"
+
+#: FMain.class:418
+msgid "Республика Адыгея"
+msgstr "Республика Адыгея"
+
+#: FMain.class:421
+msgid "Республика Башкортостан"
+msgstr "Республика Башкортостан"
+
+#: FMain.class:424
+msgid "Республика Бурятия"
+msgstr "Республика Бурятия"
+
+#: FMain.class:427
+msgid "Республика Алтай"
+msgstr "Республика Алтай"
+
+#: FMain.class:430
+msgid "Республика Дагестан"
+msgstr "Республика Дагестан"
+
+#: FMain.class:433
+msgid "Республика Ингушетия"
+msgstr "Республика Ингушетия"
+
+#: FMain.class:436
+msgid "Кабардино-Балкарская республика"
+msgstr "Кабардино-Балкарская республика"
+
+#: FMain.class:439
+msgid "Республика Калмыкия"
+msgstr "Республика Калмыкия"
+
+#: FMain.class:442
+msgid "Карачаево-Черкесская республика"
+msgstr "Карачаево-Черкесская республика"
+
+#: FMain.class:445
+msgid "Республика Карелия"
+msgstr "Республика Карелия"
+
+#: FMain.class:448
+msgid "Республика Коми"
+msgstr "Республика Коми"
+
+#: FMain.class:451
+msgid "Республика Марий Эл"
+msgstr "Республика Марий Эл"
+
+#: FMain.class:454
+msgid "Республика Мордовия"
+msgstr "Республика Мордовия"
+
+#: FMain.class:457
+msgid "Республика Саха (Якутия)"
+msgstr "Республика Саха (Якутия)"
+
+#: FMain.class:460
+msgid "Республика Северная Осетия - Алания"
+msgstr "Республика Северная Осетия - Алания"
+
+#: FMain.class:463
+msgid "Республика Татарстан"
+msgstr "Республика Татарстан"
+
+#: FMain.class:466
+msgid "Республика Тыва (Тува)"
+msgstr "Республика Тыва (Тува)"
+
+#: FMain.class:469
+msgid "Республика Удмуртия"
+msgstr "Республика Удмуртия"
+
+#: FMain.class:472
+msgid "Республика Хакасия"
+msgstr "Республика Хакасия"
+
+#: FMain.class:475
+msgid "Чеченская республика"
+msgstr "Чеченская республика"
+
+#: FMain.class:478
+msgid "Республика Чувашия"
+msgstr "Республика Чувашия"
+
+#: FMain.class:481
+msgid "Алтайский край"
+msgstr "Алтайский край"
+
+#: FMain.class:484
+msgid "Краснодарский край"
+msgstr "Краснодарский край"
+
+#: FMain.class:487
+msgid "Красноярский край"
+msgstr "Красноярский край"
+
+#: FMain.class:490
+msgid "Приморский край"
+msgstr "Приморский край"
+
+#: FMain.class:493
+msgid "Ставропольский край"
+msgstr "Ставропольский край"
+
+#: FMain.class:496
+msgid "Хабаровский край"
+msgstr "Хабаровский край"
+
+#: FMain.class:499
+msgid "Амурская область"
+msgstr "Амурская область"
+
+#: FMain.class:502
+msgid "Архангельская область"
+msgstr "Архангельская область"
+
+#: FMain.class:505
+msgid "Астраханская область"
+msgstr "Астраханская область"
+
+#: FMain.class:508
+msgid "Белгородская область"
+msgstr "Белгородская область"
+
+#: FMain.class:511
+msgid "Брянская область"
+msgstr "Брянская область"
+
+#: FMain.class:514
+msgid "Владимирская область"
+msgstr "Владимирская область"
+
+#: FMain.class:517
+msgid "Волгоградская область"
+msgstr "Волгоградская область"
+
+#: FMain.class:520
+msgid "Вологодская область"
+msgstr "Вологодская область"
+
+#: FMain.class:523
+msgid "Воронежская область"
+msgstr "Воронежская область"
+
+#: FMain.class:526
+msgid "Ивановская область"
+msgstr "Ивановская область"
+
+#: FMain.class:529
+msgid "Иркутская область"
+msgstr "Иркутская область"
+
+#: FMain.class:532
+msgid "Калининградская область"
+msgstr "Калининградская область"
+
+#: FMain.class:535
+msgid "Калужская область"
+msgstr "Калужская область"
+
+#: FMain.class:538
+msgid "Камчатский край"
+msgstr "Камчатский край"
+
+#: FMain.class:541
+msgid "Кемеровская область"
+msgstr "Кемеровская область"
+
+#: FMain.class:544
+msgid "Кировская область"
+msgstr "Кировская область"
+
+#: FMain.class:547
+msgid "Костромская область"
+msgstr "Костромская область"
+
+#: FMain.class:550
+msgid "Курганская область"
+msgstr "Курганская область"
+
+#: FMain.class:553
+msgid "Курская область"
+msgstr "Курская область"
+
+#: FMain.class:556
+msgid "Ленинградская область"
+msgstr "Ленинградская область"
+
+#: FMain.class:559
+msgid "Липецкая область"
+msgstr "Липецкая область"
+
+#: FMain.class:562
+msgid "Магаданская область"
+msgstr "Магаданская область"
+
+#: FMain.class:565
+msgid "Московская область"
+msgstr "Московская область"
+
+#: FMain.class:568
+msgid "Мурманская область"
+msgstr "Мурманская область"
+
+#: FMain.class:571
+msgid "Новгородская область"
+msgstr "Новгородская область"
+
+#: FMain.class:574
+msgid "Новосибирская область"
+msgstr "Новосибирская область"
+
+#: FMain.class:577
+msgid "Омская область"
+msgstr "Омская область"
+
+#: FMain.class:580
+msgid "Оренбургская область"
+msgstr "Оренбургская область"
+
+#: FMain.class:583
+msgid "Орловская область"
+msgstr "Орловская область"
+
+#: FMain.class:586
+msgid "Пензенская область"
+msgstr "Пензенская область"
+
+#: FMain.class:589
+msgid "Пермский край"
+msgstr "Пермский край"
+
+#: FMain.class:592
+msgid "Псковская область"
+msgstr "Псковская область"
+
+#: FMain.class:595
+msgid "Ростовская область"
+msgstr "Ростовская область"
+
+#: FMain.class:598
+msgid "Рязанская область"
+msgstr "Рязанская область"
+
+#: FMain.class:601
+msgid "Самарская область"
+msgstr "Самарская область"
+
+#: FMain.class:604
+msgid "Саратовская область"
+msgstr "Саратовская область"
+
+#: FMain.class:607
+msgid "Сахалинская область"
+msgstr "Сахалинская область"
+
+#: FMain.class:610
+msgid "Свердловская область"
+msgstr "Свердловская область"
+
+#: FMain.class:613
+msgid "Смоленская область"
+msgstr "Смоленская область"
+
+#: FMain.class:616
+msgid "Тамбовская область"
+msgstr "Тамбовская область"
+
+#: FMain.class:619
+msgid "Тверская область"
+msgstr "Тверская область"
+
+#: FMain.class:622
+msgid "Томская область"
+msgstr "Томская область"
+
+#: FMain.class:625
+msgid "Тульская область"
+msgstr "Тульская область"
+
+#: FMain.class:628
+msgid "Тюменская область"
+msgstr "Тюменская область"
+
+#: FMain.class:631
+msgid "Ульяновская область"
+msgstr "Ульяновская область"
+
+#: FMain.class:634
+msgid "Челябинская область"
+msgstr "Челябинская область"
+
+#: FMain.class:637
+msgid "Забайкальский край"
+msgstr "Забайкальский край"
+
+#: FMain.class:640
+msgid "Ярославская область"
+msgstr "Ярославская область"
+
+#: FMain.class:643
+msgid "Москва"
+msgstr "Москва"
+
+#: FMain.class:646
+msgid "Санкт-Петербург"
+msgstr "Санкт-Петербург"
+
+#: FMain.class:649
+msgid "Еврейская автономная область"
+msgstr "Еврейская автономная область"
+
+#: FMain.class:652
+msgid "Ненецкий автономный округ"
+msgstr "Ненецкий автономный округ"
+
+#: FMain.class:655
+msgid "Ханты-Мансийский автономный округ"
+msgstr "Ханты-Мансийский автономный округ"
+
+#: FMain.class:658
+msgid "Чукотский автономный округ"
+msgstr "Чукотский автономный округ"
+
+#: FMain.class:661
+msgid "Ямало-Ненецкий автономный округ"
+msgstr "Ямало-Ненецкий автономный округ"
+
+#: FMain.class:670
+msgid "Апрель 2015"
+msgstr "Апрель 2015"
+
+#: FMain.class:673
+msgid "Май 2015"
+msgstr "Май 2015"
+
+#: FMain.class:676
+msgid "Июнь 2015"
+msgstr "Июнь 2015"
+
+#: FMain.class:679
+msgid "Июль 2015"
+msgstr "Июль 2015"
+
+#: FMain.class:682
+msgid "Август 2015"
+msgstr "Август 2015"
+
+#: FMain.class:685
+msgid "Сентябрь 2015"
+msgstr "Сентябрь 2015"
+
+#: FMain.class:688
+msgid "Октябрь 2015"
+msgstr "Октябрь 2015"
+
+#: FMain.class:691
+msgid "Ноябрь 2015"
+msgstr "Ноябрь 2015"
+
+#: FMain.class:694
+msgid "Декабрь 2015"
+msgstr "Декабрь 2015"
+
+#: FMain.class:697
+msgid "Январь 2016"
+msgstr "Январь 2016"
+
+#: FMain.class:700
+msgid "Февраль 2016"
+msgstr "Февраль 2016"
+
+#: FMain.class:703
+msgid "Март 2016"
+msgstr "Март 2016"
+
+#: FMain.class:706
+msgid "Апрель 2016"
+msgstr "Апрель 2016"
+
+#: FMain.class:709
+msgid "Май 2016"
+msgstr "Май 2016"
+
+#: FMain.class:712
+msgid "Июнь 2016"
+msgstr "Июнь 2016"
+
+#: FMain.class:715
+msgid "Июль 2016"
+msgstr "Июль 2016"
+
+#: FMain.class:718
+msgid "Август 2016"
+msgstr "Август 2016"
+
+#: FMain.class:721
+msgid "Сентябрь 2016"
+msgstr "Сентябрь 2016"
+
+#: FMain.class:724
+msgid "Октябрь 2016"
+msgstr "Октябрь 2016"
+
+#: FMain.class:727
+msgid "Ноябрь 2016"
+msgstr "Ноябрь 2016"
+
+#: FMain.class:730
+msgid "Декабрь 2016"
+msgstr "Декабрь 2016"
+
+#: FMain.class:733
+msgid "Январь 2017"
+msgstr "Январь 2017"
+
+#: FMain.class:736
+msgid "Февраль 2017"
+msgstr "Февраль 2017"
+
+#: FMain.class:739
+msgid "Март 2017"
+msgstr "Март 2017"
+
+#: FMain.class:742
+msgid "раньше 01.04.2015 или позже 31.03.2017"
+msgstr "раньше 01.04.2015 или позже 31.03.2017"
+
+#: FMain.class:777
+msgid "Страна отправителя:"
+msgstr "Страна отправителя:"
+
+#: FMain.class:781
+msgid "Дата отправления:"
+msgstr "Дата отправления:"
+
+#: FMain.class:782
+msgid "Регион отправителя:"
+msgstr "Регион отправителя:"
+
+#: FMain.form:36
+msgid "Действия"
+msgstr "Действия"
+
+#: FMain.form:39
+msgid "Проверить"
+msgstr "Проверить"
+
+#: FMain.form:43
+msgid "Очистить"
+msgstr "Очистить"
+
+#: FMain.form:47
+msgid "Выход"
+msgstr "Выход"
+
+#: FMain.form:52
+msgid "Справка"
+msgstr "Справка"
+
+#: FMain.form:59
+msgid "Поддержать проект"
+msgstr "Поддержать проект"
+
+#: FMain.form:63
+msgid "Сообщить об ошибке"
+msgstr "Сообщить об ошибке"
+
+#: FMain.form:67
+msgid "О программе"
+msgstr "О программе"
+
+#: FMain.form:79
+msgid "Введите почтовый идентификатор"
+msgstr "Введите почтовый идентификатор"
+
+#: FMain.form:85
+msgid "Международное отправление"
+msgstr "Международное отправление"
+
+#: FMain.form:85
+msgid "Отправление по России"
+msgstr "Отправление по России"
+
+#: FMain.form:104
+msgid "Сброс"
+msgstr "Сброс"
+
+#: FMain.form:114
+msgid "Результат проверки"
+msgstr "Результат проверки"
+
+#: FMain.form:120
+msgid "Валидность:"
+msgstr "Валидность:"
+
+#: FMain.form:126
+msgid "Тип отправления:"
+msgstr "Тип отправления:"
+
+#: FMain.form:132
+msgid "Страна-отправитель:"
+msgstr "Страна-отправитель:"
+
+#: FMain.form:154
+msgid "Введите почтовый идентификатор..."
+msgstr "Введите почтовый идентификатор..."
+
+#: frmAbout.form:15
+msgid "О программе TrackValidX"
+msgstr "О программе TrackValidX"
+
+#: frmAbout.form:27
+msgid "0.1.1"
+msgstr "-"
+
+#: frmAbout.form:33
+msgid "Валидатор почтовых трек-номеров."
+msgstr "Валидатор почтовых трек-номеров."
+
+#: frmAbout.form:38
+msgid "http://open.ssvarentsov.ru/ru/trackvalidx/home.html"
+msgstr "http://open.ssvarentsov.ru/ru/trackvalidx/home.html"
+
+#: frmAbout.form:44
+msgid "Copyright © Sergey Varentsov, 2016"
+msgstr "-"
+
+#: frmAbout.form:51
+msgid "Перевод"
+msgstr "Перевод"
+
+#: frmAbout.form:55
+msgid "Русский (ru) - Sergey Varentsov\nEnglish (en) - Sergey Varentsov"
+msgstr "-"
+
+#: frmAbout.form:59
+msgid "Лицензия"
+msgstr "Лицензия"
+

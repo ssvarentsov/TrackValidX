@@ -1,0 +1,51 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,80,54)
+  Text = ("О программе TrackValidX")
+  Resizable = False
+  { lblAppName Label
+    MoveScaled(2,2,21,7)
+    Font = Font["Droid Sans,+7"]
+    Text = ("TrackValidX")
+  }
+  { lblAppVersion Label
+    MoveScaled(23,2,11,7)
+    Font = Font["Droid Sans,+7"]
+    Text = ("0.1.1")
+  }
+  { lblDescription Label
+    MoveScaled(2,8,50,4)
+    Font = Font["+2"]
+    Text = ("Валидатор почтовых трек-номеров.")
+  }
+  { urlAppHomePage URLLabel
+    MoveScaled(2,13,45,4)
+    Text = ("http://open.ssvarentsov.ru/ru/trackvalidx/home.html")
+  }
+  { lblCopyright Label
+    MoveScaled(2,18,50,4)
+    Font = Font["+2"]
+    Text = ("Copyright © Sergey Varentsov, 2016")
+  }
+  { tabAbout TabStrip
+    MoveScaled(1,24,78,28)
+    Count = 2
+    Index = 0
+    Text = ("Перевод")
+    { txtATranslators TextArea
+      MoveScaled(1,1,75,21)
+      Text = ("Русский (ru) - Sergey Varentsov\nEnglish (en) - Sergey Varentsov")
+      ReadOnly = True
+    }
+    Index = 1
+    Text = ("Лицензия")
+    { txaLicense TextArea
+      MoveScaled(1,1,75,21)
+      Font = Font["Noto Sans UI,-1"]
+      Alignment = Align.Left
+      ReadOnly = True
+    }
+    Index = 0
+  }
+}
