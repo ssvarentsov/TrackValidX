@@ -21,7 +21,7 @@
   }
   { urlAppHomePage URLLabel
     MoveScaled(2,13,45,4)
-    Text = ("http://ssvarentsov.ru/open/trackvalidx/features.html")
+    Text = ("http://open.ssvarentsov.ru/ru/trackvalidx/home.html")
   }
   { lblCopyright Label
     MoveScaled(2,18,50,4)

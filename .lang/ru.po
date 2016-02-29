@@ -2,6 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TrackValid 3.8.4\n"
+"POT-Creation-Date: 2016-02-29 18:06 UTC\n"
 "PO-Revision-Date: 2016-02-27 15:15 UTC\n"
 "Last-Translator: ssvarentsov <sergey@ssvarentsov.ru>\n"
 "Language: ru\n"
@@ -1610,10 +1611,11 @@ msgid "Перевод"
 msgstr "Перевод"
 
 #: frmAbout.form:55
-msgid "Русский (ru) - Sergey Varentsov\nEnglish (en) - Sergey Varentsov"
+msgid ""
+"Русский (ru) - Sergey Varentsov\n"
+"English (en) - Sergey Varentsov"
 msgstr "-"
 
 #: frmAbout.form:59
 msgid "Лицензия"
 msgstr "Лицензия"
-

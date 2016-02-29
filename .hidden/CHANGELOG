@@ -1,3 +1,9 @@
+* Mon Feb 29 2016 Sergey Varentsov <sergey@ssvarentsov.ru> 0.1.1
+- Обработаны исключения при попытке проверить некорректно введенный трек-номер.
+- Код изменен в соответствии с naming conventions.
+
+* Mon Feb 29 2016 Sergey Varentsov <sergey@ssvarentsov.ru> 0.1.1
+
 * Fri Feb 26 2016 Sergey Varentsov <sergey@ssvarentsov.ru> 0.1.0
 - Первоначальный релиз
 
